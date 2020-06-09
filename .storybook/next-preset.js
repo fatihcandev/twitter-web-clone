@@ -41,7 +41,7 @@ module.exports = {
           options: {
             sourceMap: true,
             config: {
-              path: './.storybook/'
+              path: './'
             }
           }
         }
