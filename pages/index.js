@@ -1,4 +1,4 @@
-import Button from '../.storybook/components/button'
+import Button from '../components/button'
 
 const Home = () => (
   <div>
