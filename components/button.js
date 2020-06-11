@@ -2,8 +2,12 @@ import React from 'react'
 import styles from './button.module.css'
 import cn from 'classnames'
 
-const Button = ({ children, className, ...props }) => (
-  <button type="button" className={cn(styles.button, className)} {...props}>
+const Button = ({ fullW = false, children, className, ...props }) => (
+  <button
+    type="button"
+    className={cn(styles.button, fullW && styles.fullW, className)}
+    {...props}
+  >
     {children}
   </button>
 )
