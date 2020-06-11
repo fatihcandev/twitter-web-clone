@@ -1,6 +1,6 @@
 import React from 'react'
 import NavigationButton from './navigation-button'
-import TitleBold from './title-bold'
+import TextTitle from './text-title'
 import * as Icons from './icons'
 import styles from './navigation.module.css'
 
@@ -52,7 +52,7 @@ const Navigation = ({ selectedKey }) => (
           notify={navigationButton.name === "Notifications" && 17}
         >
           {navigationButton.icon}
-          <TitleBold>{navigationButton.name} </TitleBold>
+          <TextTitle>{navigationButton.name} </TextTitle>
         </NavigationButton>
       ))
     }
