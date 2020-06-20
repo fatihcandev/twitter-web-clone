@@ -1,0 +1,19 @@
+.sidebar {
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media (--d) {
+    align-items: stretch;
+  }
+}
+
+.profile {
+  margin-top: auto;
+}
+
+.tweet {
+  margin-top: 16px;
+  margin-bottom: 20px;
+}
