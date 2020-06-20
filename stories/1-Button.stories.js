@@ -6,10 +6,12 @@ import TextTitle from '../components/text-title'
 import * as Icons from '../components/icons'
 import ThemeButton from '../components/theme-button'
 import Stack from '../components/stack'
+import { withKnobs, boolean } from '@storybook/addon-knobs'
 
 export default {
   title: 'Buttons',
-  component: Button
+  component: Button,
+  decorators: [withKnobs]
 }
 
 export const Normal = () => <Button>Save</Button>
@@ -17,7 +19,9 @@ export const Theme = () => (
   <Stack column>
     <ThemeButton>Tweet</ThemeButton>
     <ThemeButton fullW>Tweet</ThemeButton>
-    <ThemeButton fullW taller>Tweet Big</ThemeButton>
+    <ThemeButton fullW taller>
+      Tweet Big
+    </ThemeButton>
   </Stack>
 )
 
@@ -28,4 +32,7 @@ export const NavButton = () => (
   </NavigationButton>
 )
 
-export const Nav = () => <Navigation selectedKey="Home" />
+export const Nav = () => {
+  const flat = boolean('Flat', false)
+  return <Navigation flat={flat} selectedKey="Home" />
+}
