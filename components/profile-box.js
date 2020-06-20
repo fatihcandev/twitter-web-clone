@@ -6,14 +6,22 @@ import Button from './button'
 import { ArrowBottom } from './icons'
 import TextBody from './text-body'
 
-const ProfileBox = ({ name = 'Fatih Can', slug = '@fatihcandev' }) => (
-  <Button className={cn([styles.box])} >
-    <Avatar />
-    <div className={styles.body}>
-      <TextBody bold> {name} </TextBody>
-      <TextBody className={styles.slug}> {slug} </TextBody>
-    </div>
-    <ArrowBottom className={styles.icon} />
+const ProfileBox = ({
+  flat = false,
+  name = 'Fatih Can',
+  slug = '@fatihcandev'
+}) => (
+  <Button className={cn([styles.box])}>
+    <Avatar size={39} />
+    {!flat && (
+      <>
+        <div className={styles.body}>
+          <TextBody bold> {name} </TextBody>
+          <TextBody className={styles.slug}> {slug} </TextBody>
+        </div>
+        <ArrowBottom className={styles.icon} />
+      </>
+    )}
   </Button>
 )
 
