@@ -4,58 +4,87 @@ import TextTitle from './text-title'
 import * as Icons from './icons'
 import styles from './navigation.module.css'
 
-const navigationButtonContent = [
+const MENU = [
   {
-    "name": "Home",
-    "icon": <Icons.Home />,
+    key: 'twitter',
+    title: '',
+    icon: <Icons.Twitter />,
+    notify: 0
   },
   {
-    "name": "Explore",
-    "icon": <Icons.Explore />,
+    key: 'home',
+    title: 'Home',
+    icon: <Icons.Home />,
+    iconSelected: <Icons.HomeFill />,
+    notify: 0
   },
   {
-    "name": "Notifications",
-    "icon": <Icons.Notification />,
+    key: 'explore',
+    title: 'Explore',
+    icon: <Icons.Explore />,
+    iconSelected: <Icons.ExplorerFill />,
+    notify: 0
   },
   {
-    "name": "Messages",
-    "icon": <Icons.Messages />,
+    key: 'notifications',
+    title: 'Notifications',
+    icon: <Icons.Notification />,
+    iconSelected: <Icons.NotificationFill />,
+    notify: 17
   },
   {
-    "name": "Bookmarks",
-    "icon": <Icons.Bookmark />,
+    key: 'messages',
+    title: 'Messages',
+    icon: <Icons.Messages />,
+    iconSelected: <Icons.MessagesFill />,
+    notify: 0
   },
   {
-    "name": "Lists",
-    "icon": <Icons.Lists />,
+    key: 'bookmarks',
+    title: 'Bookmarks',
+    icon: <Icons.Bookmark />,
+    iconSelected: <Icons.BookmarkFill />,
+    notify: 0
   },
   {
-    "name": "Profile",
-    "icon": <Icons.Profile />,
+    key: 'lists',
+    title: 'Lists',
+    icon: <Icons.Lists />,
+    iconSelected: <Icons.ListsFill />,
+    notify: 0
   },
   {
-    "name": "More",
-    "icon": <Icons.More />,
+    key: 'profile',
+    title: 'Profile',
+    icon: <Icons.Profile />,
+    iconSelected: <Icons.ProfileFill />,
+    notify: 0
   },
-];
+  {
+    key: 'more',
+    title: 'More',
+    icon: <Icons.More />,
+    iconSelected: <Icons.More />,
+    notify: 0
+  }
+]
 
-const Navigation = ({ selectedKey }) => (
-
+const Navigation = ({ flat = false, selectedKey = 'home' }) => (
   <nav className={styles.nav}>
-    <NavigationButton>
-      <Icons.Twitter />
-    </NavigationButton>
-    {
-      navigationButtonContent.map((navigationButton) => (
+    {MENU.map((menu) => {
+      const showTitle = !flat && menu.title.length > 0
+      const selected = selectedKey === menu.key
+      return (
         <NavigationButton
-          selected={selectedKey === navigationButton.name}
-          notify={navigationButton.name === "Notifications" && 17}
+          key={menu.key}
+          selected={selected}
+          notify={menu.notify}
         >
-          {navigationButton.icon}
-          <TextTitle>{navigationButton.name} </TextTitle>
+          {selected ? menu.iconSelected : menu.icon}
+          {showTitle > 0 && <TextTitle>{menu.title} </TextTitle>}
         </NavigationButton>
-      ))
-    }
+      )
+    })}
   </nav>
 )
 
