@@ -1,7 +1,10 @@
 import React from 'react'
 import NavigationButton from './navigation-button'
 import TextTitle from './text-title'
+
 import styles from './navigation.module.css'
+import cn from 'classnames'
+
 import { MENU } from '../constants'
 import { useRouter } from 'next/router'
 
@@ -19,7 +22,7 @@ const Navigation = ({ flat = false }) => {
             selected={selected}
             notify={menu.notify}
             href={menu.path}
-            className={styles.navButton}
+            className={cn(styles.navButton, menu.key)}
           >
             {selected ? menu.iconSelected : menu.icon}
             {showTitle > 0 && <TextTitle>{menu.title} </TextTitle>}
