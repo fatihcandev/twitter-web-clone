@@ -6,6 +6,7 @@
 
   @media (--d) {
     align-items: stretch;
+    padding-right: 45px;
   }
 }
 
