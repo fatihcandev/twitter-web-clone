@@ -10,7 +10,7 @@ const Sidebar = ({ flat }) => (
   <div className={cn(styles.sidebar)}>
     <Navigation flat={flat} />
     <div className={styles.tweet}>
-      <ThemeButton big fullW={!flat}>
+      <ThemeButton taller fullW={!flat}>
         {flat ? <Tweet /> : 'Tweet'}
       </ThemeButton>
     </div>
