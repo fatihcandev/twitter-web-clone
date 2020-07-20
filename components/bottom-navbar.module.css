@@ -1,0 +1,12 @@
+.wrapper {
+  padding: 5px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr;
+  border-top: 1px solid var(--c-border-color);
+  justify-items: center;
+}
+
+.button {
+  color: var(--c-icon-color);
+}
