@@ -25,7 +25,7 @@ const Navigation = ({ flat = false }) => {
             className={cn(styles.navButton, menu.key)}
           >
             {selected ? menu.iconSelected : menu.icon}
-            {showTitle > 0 && <TextTitle>{menu.title} </TextTitle>}
+            {showTitle && <TextTitle>{menu.title} </TextTitle>}
           </NavigationButton>
         )
       })}
