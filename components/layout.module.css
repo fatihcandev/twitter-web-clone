@@ -1,19 +1,24 @@
 .layout {
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr auto;
   background-color: #333;
   min-height: 100vh;
   background-color: var(--c-primary);
   max-width: 670px;
   margin: auto;
 
-  @media (--t) {
-    max-width: 1060px;
-    grid-template-columns: auto 1fr 300px;
+  @media (min-width: 500px) {
+    grid-template-columns: auto 1fr;
   }
 
-  @media (--d) {
-    max-width: 1270px;
-    grid-template-columns: auto 1fr 300px;
+  @media (min-width: 1005px) {
+    max-width: 1055px;
+    grid-template-columns: auto 1fr var(--right-side);
+  }
+
+  @media (min-width: 1282px) {
+    max-width: 1282px;
+    grid-template-columns: auto 1fr var(--right-side);
   }
 }
