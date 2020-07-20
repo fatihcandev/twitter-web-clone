@@ -1,0 +1,20 @@
+.wrapper {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  width: 59px;
+  height: 59px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--c-theme);
+  color: white;
+  box-shadow: rgba(136, 153, 166, 0.2) 0px 0px 10px,
+    rgba(136, 153, 166, 0.25) 0px 1px 3px 1px;
+  border-radius: 99px;
+
+  svg {
+    width: 22.5px;
+    height: 22.5px;
+  }
+}
