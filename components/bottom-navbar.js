@@ -13,7 +13,11 @@ const BottomNavbar = () => {
         return (
           <div>
             <span>
-              <NavigationButton className={!selected && styles.button} selected>
+              <NavigationButton
+                href={menu.path}
+                className={!selected && styles.button}
+                selected
+              >
                 {selected ? menu.iconSelected : menu.icon}
               </NavigationButton>
             </span>
