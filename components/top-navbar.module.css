@@ -1,0 +1,22 @@
+.wrapper {
+  padding: 5px 15px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-rows: 1fr;
+  align-items: center;
+  border-bottom: 1px solid var(--c-border-color);
+}
+
+.avatar {
+  width: 60px;
+}
+
+.text {
+  font-size: 19px;
+  font-weight: 800;
+}
+
+.sparkles {
+  color: var(--c-theme);
+  margin-left: auto;
+}
