@@ -2,8 +2,9 @@ import React from 'react'
 import * as Icon from '../components/icons'
 
 export default {
-  TABLET_SIZE: 980,
-  DESKTOP_SIZE: 1270
+  MOBILE_SIZE: 500,
+  TABLET_SIZE: 1005,
+  DESKTOP_SIZE: 1282
 }
 
 export const MENU = [
@@ -77,6 +78,41 @@ export const MENU = [
     title: 'More',
     icon: <Icon.More />,
     iconSelected: <Icon.More />,
+    notify: 0
+  }
+]
+
+export const BOTTOM_MENU = [
+  {
+    key: 'home',
+    path: '/',
+    title: 'Home',
+    icon: <Icon.Home />,
+    iconSelected: <Icon.HomeFill />,
+    notify: 0
+  },
+  {
+    key: 'search',
+    path: '/search',
+    title: 'Search',
+    icon: <Icon.Search />,
+    iconSelected: <Icon.Search />,
+    notify: 0
+  },
+  {
+    key: 'notifications',
+    path: '/notifications',
+    title: 'Notifications',
+    icon: <Icon.Notification />,
+    iconSelected: <Icon.NotificationFill />,
+    notify: 17
+  },
+  {
+    key: 'messages',
+    path: '/messages',
+    title: 'Messages',
+    icon: <Icon.Messages />,
+    iconSelected: <Icon.MessagesFill />,
     notify: 0
   }
 ]
